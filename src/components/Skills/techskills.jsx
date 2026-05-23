@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./techskills.module.css";
 
 
@@ -13,6 +14,7 @@ const skills = [
 ];
 
 const TechSkills = () => {
+  const [open, setOpen] = useState(false);
   return (
  <section className={styles.skillsSection}>
       <div className={styles.sideTag}>
@@ -20,7 +22,10 @@ const TechSkills = () => {
       </div>
       <h1 className={styles.mobileHeading}>Skills</h1>
 
-      <div className={styles.cardWrapper}>
+      <div
+  className={`${styles.cardWrapper} ${open ? styles.open : ""}`}
+  onClick={() => setOpen(!open)}
+>
         {skills.map((skill, index) => (
           <div
             className={styles.card}
