@@ -1,0 +1,48 @@
+.sectionIII{
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 2rem;
+    /* margin:0.8rem; */
+}
+.imgContainer{
+    padding:3rem;
+    width:70%;
+    height: 80%;
+    position: relative;
+}
+.image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.count{
+    position: absolute;
+    background: transparent black;
+    bottom: 1.5rem;
+    right:3rem;
+}
+.left{
+    position: absolute;
+    top:50%;
+    left: 8%;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.left:active, .right:active{
+    transform: scale(1.1);
+}
+.right{
+     position: absolute;
+    top:50%;
+    right: 8%;
+    font-size: 2rem;
+    cursor: pointer;
+}
