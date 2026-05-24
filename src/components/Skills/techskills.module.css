@@ -8,9 +8,6 @@
   overflow-x: hidden;
   padding: 2rem;
 }
-.open {
-  flex-wrap: wrap;
-}
 
 .sideTag {
   position: absolute;
@@ -57,7 +54,7 @@
   color: #111827;
   box-shadow:
     0 10px 30px rgba(0,0,0,0.08);
-  left: 45%;
+  left: 50%;
   transform:
     translateX(-50%)
     rotate(calc(var(--i) * -4deg));
@@ -70,10 +67,10 @@
 }
 
 .cardWrapper:hover .card {
-  left: calc(50% + ((var(--i) - 3.5) * 120px));
+  left: calc(45% + ((var(--i) - 3.5) * 120px));
   transform:
   translateX(0px)
-  rotate(calc(var(--i) * -4deg));
+  rotate(calc(var(--i) * 0deg));
 }
 
 .card:hover {
@@ -86,20 +83,10 @@
     0 20px 40px rgba(59,130,246,0.2);
 }
 
-@media (max-width: 1024px) {
 
-  .cardWrapper {
-    width: 800px;
-  }
 
-  .cardWrapper:hover .card {
-  transform:
-    translateX(calc((var(--i) - 3.5) * 110px))
-    rotate(0deg);
-}
-}
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
   .sideTag {
     display: none;
@@ -128,13 +115,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction:row ;
+    flex-wrap: wrap;
     position: relative;
 
     transition: all 0.5s ease;
   }
 
-  /* STACKED DECK */
+  /* STACKED DECK 
 
   .card {
     width: 130px;
@@ -153,11 +141,10 @@
     transition: all 0.5s ease;
   }
 
-  /* OPEN GRID */
 
   .open {
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
 
     align-items: center;
     justify-content: center;
@@ -167,13 +154,10 @@
 
   .open .card {
   position: relative;
-
   width: 140px;
   height: 90px;
-
   left: unset;
   top: unset;
-
   transform: none;
 }
-}
+} */
