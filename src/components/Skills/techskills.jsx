@@ -21,6 +21,13 @@ const TechSkills = () => {
 
   return (
     <section className={styles.section} ref={ref}>
+      <div className={styles.sideTag}>
+        <h1>SKILLS</h1>
+      </div>
+
+      {/* TOP HEADING FOR MOBILE */}
+      <h1 className={styles.mobileHeading}>SKILLS</h1>
+
       <div className={styles.container}>
         {skills.map((skill, index) => (
           <motion.div
