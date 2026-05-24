@@ -1,39 +1,57 @@
 import styles from "./techskills.module.css";
-
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const skills = [
   "HTML",
   "CSS",
   "JavaScript",
   "React",
-  "Tailwind",
-  "Bootstrap",
   "Node.js",
-  "Express.js",
+  "Express",
+  "MongoDB",
+  "Tailwind",
   "Git",
 ];
 
 const TechSkills = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.7,
+  });
+
   return (
- <section className={styles.skillsSection}>
-      <div className={styles.sideTag}>
-        <span>SKILLS</span>
-      </div>
-
-      <h1 className={styles.mobileHeading}>Skills</h1>
-
-      <div className={styles.cardWrapper}>
+    <section className={styles.section} ref={ref}>
+      <div className={styles.container}>
         {skills.map((skill, index) => (
-          <div
-            className={styles.card}
+          <motion.div
             key={index}
-            style={{ "--i": index }}
+            className={styles.card}
+            animate={
+              inView
+                ? {
+                    x: (index % 3) * 220 - 220,
+                    y: Math.floor(index / 3) * 140,
+                    rotate: 0,
+                    scale: 1,
+                  }
+                : {
+                    x: 0,
+                    y: 0,
+                    rotate: index * 3,
+                    scale: 0.95,
+                  }
+            }
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 14,
+              delay: index * 0.05,
+            }}
           >
             {skill}
-          </div>
+          </motion.div>
         ))}
       </div>
-
     </section>
   );
 };

@@ -1,163 +1,41 @@
-.skillsSection {
-  min-height: 70vh;
-  background: #f7f8fc;
+.section {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.container {
   position: relative;
-  overflow-x: hidden;
-  padding: 2rem;
-}
-
-.sideTag {
-  position: absolute;
-  left: -1.5rem;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  font-size: 5rem;
-  font-weight: 800;
-  letter-spacing: 12px;
-  text-transform: uppercase;
-  color: transparent;
- -webkit-text-stroke: 2px #4c6c9f;
-  opacity: 0.7;
-  user-select: none;
-  pointer-events: none;
-}
-
-.mobileHeading {
-  display: none;
-}
-
-.cardWrapper {
-  position: relative;
-  width: 100%;
-  max-width: 850px;
-  height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 700px;
+  height: 500px;
 }
 
 .card {
   position: absolute;
+
   width: 180px;
-  height: 220px;
-  background: white;
-  border-radius: 28px;
-  border: 1px solid #e5e7eb;
+  height: 100px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  border-radius: 20px;
+
+  background: white;
+  color: black;
+
   font-size: 1.2rem;
   font-weight: 600;
-  color: #111827;
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
-  left: 50%;
-  transform:
-    translateX(-50%)
-    rotate(calc(var(--i) * -4deg));
-  z-index: calc(10 - var(--i));
-  transition:
-    left 0.6s ease,
-    transform 0.6s ease,
-    box-shadow 0.4s ease;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
   cursor: pointer;
+
+  left: 50%;
+  top: 10%;
+
+  transform: translate(-50%, -50%);
 }
-
-.cardWrapper:hover .card {
-  left: calc(45% + ((var(--i) - 3.5) * 120px));
-  transform:
-  translateX(0px)
-  rotate(calc(var(--i) * 0deg));
-}
-
-.card:hover {
-  transform:
-    translateX(-50%)
-    translateY(-15px)
-    scale(1.05) !important;
-
-  box-shadow:
-    0 20px 40px rgba(59,130,246,0.2);
-}
-
-
-
-
-/* @media (max-width: 768px) {
-
-  .sideTag {
-    display: none;
-  }
-
-  .mobileHeading {
-    display: block;
-
-    font-size: 2.5rem;
-    font-weight: 700;
-
-    margin-bottom: 3rem;
-
-    color: #111827;
-  }
-
-  .skillsSection {
-    flex-direction: column;
-    padding-top: 5rem;
-  }
-
-  .cardWrapper {
-    width: 100%;
-    min-height: 320px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction:row ;
-    flex-wrap: wrap;
-    position: relative;
-
-    transition: all 0.5s ease;
-  }
-
-  /* STACKED DECK 
-
-  .card {
-    width: 130px;
-    height: 170px;
-
-    border-radius: 24px;
-
-    font-size: 1rem;
-
-    left: 50%;
-
-    transform:
-      translateX(calc((var(--i) - 3.5) * 18px))
-      rotate(calc(var(--i) * -6deg));
-
-    transition: all 0.5s ease;
-  }
-
-
-  .open {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 1rem 0;
-  }
-
-  .open .card {
-  position: relative;
-  width: 140px;
-  height: 90px;
-  left: unset;
-  top: unset;
-  transform: none;
-}
-} */
