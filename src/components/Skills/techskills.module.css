@@ -149,10 +149,6 @@
     0 18px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* ========================= */
-/* TABLET */
-/* ========================= */
-
 @media (max-width: 1024px) {
 
   .sideTag{
@@ -173,52 +169,37 @@
   }
 }
 
-/* ========================= */
-/* MOBILE */
-/* ========================= */
-
 @media (max-width: 768px) {
 
+  .skillsSection {
+    flex-direction: column;
+    padding-top: 5rem;
+  }
   .sideTag {
     display: none;
   }
 
   .mobileHeading {
     display: block;
-
     font-size: 2.5rem;
     font-weight: 700;
-
-    margin-bottom: 3rem;
-
     color: #111827;
-
     letter-spacing: 6px;
   }
 
-  .skillsSection {
-    flex-direction: column;
-    padding-top: 5rem;
-  }
 
   .cardWrapper {
     width: 100%;
     max-width: 360px;
-
     height: 450px;
   }
 
   .skillCard {
     width: 140px;
     height: 85px;
-
     font-size: 0.95rem;
   }
 }
-
-/* ========================= */
-/* SMALL MOBILE */
-/* ========================= */
 
 @media (max-width: 480px) {
 
@@ -233,7 +214,7 @@
   }
 
   .skillCard {
-    width: 125px;
+    width: 100px;
     height: 78px;
 
     border-radius: 18px;
