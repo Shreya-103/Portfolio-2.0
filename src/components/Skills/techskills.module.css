@@ -131,7 +131,8 @@
     width: 320px;
     height: 520px;
     position: relative;
-    left: 40%;
+    /* left: 20%; */
+    left:-7rem;
   }
 
   .card img {
