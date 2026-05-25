@@ -14,29 +14,20 @@
 
 .card {
   position: absolute;
-
   width: 180px;
   height: 100px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 20px;
-
   background: white;
   color: black;
-
   font-size: 1.2rem;
   font-weight: 600;
-
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-
   cursor: pointer;
-
   left: 50%;
   top: 10%;
-
   transform: translate(-50%, -50%);
 }
 .skillsSection {
@@ -172,6 +163,7 @@
 @media (max-width: 768px) {
 
   .skillsSection {
+    display: flex;
     flex-direction: column;
     padding-top: 5rem;
   }
