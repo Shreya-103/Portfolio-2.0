@@ -98,7 +98,7 @@
 /* MOBILE */
 @media (max-width: 900px) {
   .section {
-    min-height: auto;
+    min-height: 70vh;
     padding: 5rem 1rem;
     flex-direction: column;
     justify-content: center ;
