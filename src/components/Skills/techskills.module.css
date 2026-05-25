@@ -98,7 +98,7 @@
 /* MOBILE */
 @media (max-width: 900px) {
   .section {
-    min-height: 70vh;
+    min-height: 80vh;
     padding: 5rem 1rem;
     flex-direction: column;
     justify-content: center ;
@@ -130,7 +130,8 @@
   .container {
     width: 320px;
     height: 520px;
-    margin-left:40%;
+    position: relative;
+    left: 40%;
   }
 
   .card img {
