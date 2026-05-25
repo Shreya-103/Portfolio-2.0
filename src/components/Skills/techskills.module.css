@@ -1,216 +1,144 @@
 .section {
-  min-height: 100vh;
+  height: 70vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: relative;
   overflow: hidden;
+  padding: 4rem 2rem;
 }
 
+/* PUSH CONTAINER SLIGHTLY RIGHT */
 .container {
   position: relative;
   width: 700px;
   height: 500px;
+  margin-left: 40%;
+  margin-top: 5%;
 }
 
+/* FLOATING ICONS */
 .card {
   position: absolute;
-  width: 180px;
-  height: 100px;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border-radius: 20px;
-  background: white;
-  color: black;
-  font-size: 1.2rem;
-  font-weight: 600;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  justify-content: center;
+
+  gap: 10px;
   cursor: pointer;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%, -50%);
-}
-.skillsSection {
-  min-height: 100vh;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
-  overflow: hidden;
-
-  padding: 4rem 2rem;
-  gap: 4rem;
 }
 
-/* LEFT SIDE DESKTOP HEADING */
+.card img {
+  width:  72px;
+  height: 72px;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
+  transition: all 0.3s ease;
+}
 
+.card span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: 1px;
+}
+
+/* HOVER */
+.card:hover img {
+  transform: translateY(-10px) scale(1.1);
+}
+
+/* DESKTOP LEFT TAG */
 .sideTag {
   position: absolute;
-  left: 3rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
 }
 
 .sideTag h1 {
-  font-size: 6rem;
-  font-weight: 800;
-  letter-spacing: 12px;
+  font-size: 7rem;
+  font-weight: 900;
+  letter-spacing: 14px;
 
-  transform: rotate(-90deg);
+  background: linear-gradient(to right, #1377a2, #4482da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-  color: rgba(10, 80, 154, 0.15);
-  opacity: 0.7;
-  user-select: none;
-  pointer-events: none;
+  opacity: 0.4;
 }
 
-/* MOBILE TOP HEADING */
-
+/* MOBILE HEADING */
 .mobileHeading {
   display: none;
 }
 
-/* CARD AREA */
-
-.cardWrapper {
-  position: relative;
-
-  width: 720px;
-  height: 500px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* SKILL CARD */
-
-.skillCard {
-  position: absolute;
-
-  width: 180px;
-  height: 100px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 22px;
-
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-
-  cursor: pointer;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  transition: 
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-
-  /* LIGHT MODE FRIENDLY DEFAULT */
-
-  background: rgba(255, 255, 255, 0.8);
-
-  backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.08);
-
-  color: #111827;
-}
-
-/* HOVER EFFECT */
-
-.skillCard:hover {
-  transform: translate(-50%, -55%) scale(1.05);
-
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.15);
-}
-
-@media (max-width: 1024px) {
-
-  .sideTag{
-    left: 1rem;
+/* TABLET */
+@media (max-width: 1300px) {
+  .section{
+    height: 50vh;
   }
+  .container {
+    width: 550px;
+    height: 450px;
+    margin-left: 65%;
+  }
+
+  .card img {
+    width: 62px;
+    height: 62px;
+  }
+
   .sideTag h1 {
-    font-size: 4.5rem;
-  }
-
-  .cardWrapper {
-    width: 600px;
-    height: 500px;
-  }
-
-  .skillCard {
-    width: 160px;
-    height: 95px;
+    font-size: 5rem;
   }
 }
 
-@media (max-width: 768px) {
-
-  .skillsSection {
-    display: flex;
+/* MOBILE */
+@media (max-width: 900px) {
+  .section {
+    min-height: auto;
+    padding: 5rem 1rem;
     flex-direction: column;
-    padding-top: 5rem;
+    justify-content: center ;
+    align-items: center;
   }
+
   .sideTag {
     display: none;
   }
 
+  /* MODERN MOBILE HEADING */
   .mobileHeading {
     display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #111827;
+
+    font-size: 3.2rem;
+    font-weight: 900;
+
+    margin-bottom: 2rem;
+
     letter-spacing: 6px;
+
+    background: linear-gradient(90deg, #111827, #6b7280);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
 
-
-  .cardWrapper {
-    width: 100%;
-    max-width: 360px;
-    height: 450px;
+  .container {
+    width: 320px;
+    height: 520px;
+    margin-left:40%;
   }
 
-  .skillCard {
-    width: 140px;
-    height: 85px;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .mobileHeading {
-    font-size: 2rem;
-    letter-spacing: 4px;
+  .card img {
+    width: 52px;
+    height: 52px;
   }
 
-  .cardWrapper {
-    max-width: 300px;
-    height: 420px;
-  }
-
-  .skillCard {
-    width: 100px;
-    height: 78px;
-
-    border-radius: 18px;
-
-    font-size: 0.9rem;
+  .card span {
+    font-size: 0.85rem;
   }
 }
