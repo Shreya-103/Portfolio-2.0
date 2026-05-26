@@ -8,7 +8,7 @@ const App = () =>{
     <>
     <AboutMe/>
     <TechSkills/>
-    <Project/>
+    <Projects/>
     </>
   )
 }
