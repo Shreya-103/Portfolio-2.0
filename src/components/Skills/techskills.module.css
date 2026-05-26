@@ -94,9 +94,28 @@
     font-size: 5rem;
   }
 }
+@media(max-width: 800px){
+  .sectionII{
+    height: 70vh;
+  }
+  .mobileHeading{
+    display: none;
+  }
+  .sidetag{
+    position: relative;
+    top:35%;
+  }
+  .sideTag h1{
+    font-size: 3rem;
+  }
+  .container{
+    margin-left: 5rem;
+    gap:10px;
+  }
+}
 
 /* MOBILE */
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .sectionII {
     height: 80vh;
     padding: 5rem 1rem;
@@ -133,6 +152,7 @@
     height: 520px;
     /* position: relative; */
     gap:10px;
+    margin-top: 5rem;
     /* left: 20%; */
     /* left:rem; */
   }
