@@ -1,4 +1,4 @@
-.section {
+.sectionII {
   height: 70vh;
   display: flex;
   align-items: center;
@@ -46,7 +46,7 @@
 
 /* HOVER */
 .card:hover img {
-  transform: translateY(-10px) scale(1.1);
+  transform: translateY(-1px) scale(1.1);
 }
 
 /* DESKTOP LEFT TAG */
@@ -62,7 +62,7 @@
   font-weight: 900;
   letter-spacing: 14px;
 
-  background: linear-gradient(to right, #1377a2, #4482da);
+  background: linear-gradient(to right, #0b4e6b, #0c3063);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -76,7 +76,7 @@
 
 /* TABLET */
 @media (max-width: 1300px) {
-  .section{
+  .sectionII{
     height: 50vh;
   }
   .container {
@@ -97,7 +97,7 @@
 
 /* MOBILE */
 @media (max-width: 900px) {
-  .section {
+  .sectionII {
     min-height: 80vh;
     padding: 5rem 1rem;
     flex-direction: column;
@@ -131,13 +131,14 @@
     width: 320px;
     height: 520px;
     position: relative;
+    gap:10px;
     /* left: 20%; */
     left:3rem;
   }
 
   .card img {
-    width: 60px;
-    height:60px;
+    width: 52px;
+    height:52px;
   }
 
   .card span {

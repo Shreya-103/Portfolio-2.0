@@ -52,7 +52,7 @@ const TechSkills = () => {
     // MOBILE
     if (window.innerWidth < 768) {
       return {
-        x: (index % 2) * 140 - 70,
+        x: (index % 3) * 140 - 70,
         y: Math.floor(index / 2) * 120,
       };
     }
@@ -73,7 +73,7 @@ const TechSkills = () => {
   };
 
   return (
-    <section className={styles.section} ref={ref}>
+    <section className={styles.sectionII} ref={ref}>
       <div className={styles.sideTag}>
         <h1>SKILLS</h1>
       </div>
