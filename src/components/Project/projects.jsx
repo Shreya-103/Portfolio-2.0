@@ -23,7 +23,7 @@ const Projects = () => {
                         </p>
 
                         <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/web-using-bootstrap">View</a>
+                            <a href="https://shreya-103.github.io/web-using-bootstrap" className={styles.link}>View</a>
                         </button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -41,8 +41,8 @@ const Projects = () => {
                         <p>
                             Real-time currency conversion using exchange rate API.
                         </p>
-                        <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/currency-converter">View</a>
+                        <button className="btn btn-dark" >
+                            <a href="https://shreya-103.github.io/currency-converter" className={styles.link}>View</a>
                         </button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -61,7 +61,7 @@ const Projects = () => {
                             Dynamic image fetching and responsive gallery using React.
                         </p>
                         <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/Notes-App">View</a>
+                            <a href="https://shreya-103.github.io/Notes-App" className={styles.link}>View</a>
                         </button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -82,7 +82,7 @@ const Projects = () => {
                         </p>
 
                         <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/employee-entry-login" 
+                            <a href="https://shreya-103.github.io/employee-entry-login" className={styles.link}
                         >View</a> </button>
                     </Carousel.Caption>
                 </Carousel.Item>
