@@ -40,6 +40,8 @@ const Projects = () => {
                         <h3>Currency Converter</h3>
                         <p>
                             Real-time currency conversion using exchange rate API.
+                            Features include dynamic country flags, currency swapping, live conversion updates, API integration, and a
+                               clean mobile-friendly user interface.
                         </p>
                         <button className="btn btn-dark" >
                             <a href="https://shreya-103.github.io/currency-converter" className={styles.link}>View</a>
@@ -82,6 +84,11 @@ const Projects = () => {
                         <h3>Employee Entry System</h3>
                         <p>
                             Secure employee login and management system developed during internship at BEL.
+                        </p>
+                        <p>
+                            EMPLOYEE CREDENTIALS: Employee ID: UPT223 | Password: 12345 </p>
+                            <p>
+                            ADMIN CREDENTIALS: Employee ID: admin | Password: 1234
                         </p>
 
                         <button className="btn btn-dark">
