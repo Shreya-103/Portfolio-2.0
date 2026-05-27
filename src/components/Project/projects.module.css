@@ -1,7 +1,7 @@
 .projectSection {
   min-height: 70vh;
   padding: 5rem 2rem;
-  background: #7897de;
+  background: #ffffff;
 }
 
 .heading {
@@ -24,34 +24,38 @@
 }
 
 /* Caption Styling */
-.carousel-caption {
+
+:global(.carousel-caption) {
   bottom: 20%;
 }
 
-.carousel-caption h3 {
+:global(.carousel-caption h3) {
   font-size: 2rem;
   font-weight: bold;
+  color: crimson;
 }
 
-.carousel-caption p {
+:global(.carousel-caption p) {
   font-size: 1.1rem;
+  color: crimson;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+
   .carouselImage {
-    height: 300px;
+    height: 600px;
   }
 
   .heading {
     font-size: 2rem;
   }
 
-  .carousel-caption h3 {
+  :global(.carousel-caption h3) {
     font-size: 1.2rem;
   }
 
-  .carousel-caption p {
+  :global(.carousel-caption p) {
     font-size: 0.8rem;
   }
 }
