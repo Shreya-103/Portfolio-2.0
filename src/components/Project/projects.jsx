@@ -51,15 +51,18 @@ const Projects = () => {
                 <Carousel.Item>
                     <img
                         className={styles.carouselImage}
-                        src="./Screenshot (98).png"
+                        src="./Screenshot (98).jpg"
                         alt="Notes App"
                     />
 
                     <Carousel.Caption>
                         <h3>Notes App</h3>
                         <p>
-                            Dynamic image fetching and responsive gallery using React.
-                        </p>
+                             A responsive Notes App built using React that allows users to create, search, and manage notes efficiently
+                                with a clean and interactive UI.    
+                             Integrated localStorage for persistent data saving, dark mode support, real-time updates, and responsive
+                                 design for seamless usage across devices.         
+                       </p>
                         <button className="btn btn-dark">
                             <a href="https://shreya-103.github.io/Notes-App" className={styles.link}>View</a>
                         </button>
@@ -71,8 +74,8 @@ const Projects = () => {
                 <Carousel.Item>
                     <img
                         className={styles.carouselImage}
-                        src="./Screenshot (81).png"
-                        alt="First project"
+                        src="./Screenshot (81).jpg"
+                        alt="Employee Entry System"
                     />
 
                     <Carousel.Caption>
