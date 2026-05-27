@@ -23,7 +23,7 @@ const Projects = () => {
                         </p>
 
                         <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/web-using-bootstrap" className={styles.link}>View</a>
+                            <a href="https://shreya-103.github.io/Web-Using-Bootstrap" className={styles.link}>View</a>
                         </button>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -78,7 +78,7 @@ const Projects = () => {
                     <Carousel.Caption>
                         <h3>Employee Entry System</h3>
                         <p>
-                            Secure employee login and management system developed during internship.
+                            Secure employee login and management system developed during internship at BEL.
                         </p>
 
                         <button className="btn btn-dark">
