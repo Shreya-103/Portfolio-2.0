@@ -1,5 +1,5 @@
 .projectSection {
-  min-height: 70vh;
+  min-height: 100vh;
   padding: 5rem 2rem;
   background: #ffffff;
 }
@@ -32,12 +32,12 @@
 :global(.carousel-caption h3) {
   font-size: 2rem;
   font-weight: bold;
-  color: #0f172a;
+  color: #ffffff;
 }
 
 :global(.carousel-caption p) {
   font-size: 1.1rem;
-  color: #0f172a;
+  color: #efd3d3;
 }
 
 /* Mobile Responsive */
