@@ -63,8 +63,12 @@
   letter-spacing: 18px;
   /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
   font-family: 'Times New Roman', Times, serif;
-  background: linear-gradient(to right, #0b4e6b, #0c3063);
-  -webkit-background-clip: text;
+background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+    -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   opacity: 0.4;
