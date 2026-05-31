@@ -1,58 +1,23 @@
 import styles from "./aboutme.module.css";
 import { motion } from "framer-motion";
 
-const sections = [
-  {
-    title: "About Me",
-    content:
-      "I'm a passionate Web Developer and BCA student who enjoys building modern, interactive, and responsive web experiences. I love transforming ideas into beautiful user interfaces and continuously improving my development skills."
-  },
-  {
-    title: "Technical Skills",
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Bootstrap",
-      "Tailwind",
-      "Node.js",
-      "Express.js",
-      "Git"
-    ]
-  },   
-  {
-    title: "Qualifications",
-    content:
-      "Currently pursuing BCA while actively learning Full Stack Development. Strong foundation in frontend technologies with a growing understanding of backend development and modern web architecture."
-  },
-  {
-    title: "Currently Looking For",
-    content:
-      "Frontend Development internships, freelance opportunities, collaborative projects, and chances to work on real-world applications that challenge and expand my skillset."
-  }
-];
-
 const cardVariants = {
-  hiddenLeft: {
+  hidden: {
     opacity: 0,
-    x: -120,
+    y: 40,
+    scale: 0.95,
     filter: "blur(10px)"
   },
-  hiddenRight: {
-    opacity: 0,
-    x: 120,
-    filter: "blur(10px)"
-  },
-  visible: {
+  visible: (i) => ({
     opacity: 1,
-    x: 0,
+    y: 0,
+    scale: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 0.8,
-      ease: "easeOut"
+      duration: 0.7,
+      delay: i * 0.15
     }
-  }
+  })
 };
 
 const AboutMe = () => {
@@ -63,57 +28,123 @@ const AboutMe = () => {
 
       <motion.h2
         className={styles.heading}
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
         About Me
       </motion.h2>
 
-      <div className={styles.timeline}>
-        {sections.map((item, index) => (
-          <motion.div
-            key={index}
-            className={`${styles.card} ${
-              index % 2 === 0 ? styles.left : styles.right
-            }`}
-            variants={cardVariants}
-            initial={index % 2 === 0 ? "hiddenLeft" : "hiddenRight"}
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            whileHover={{
-              y: -10,
-              scale: 1.02
-            }}
-          >
-            <h3>{item.title}</h3>
+      <motion.p
+        className={styles.subtitle}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Building modern web experiences with creativity,
+        curiosity, and continuous learning.
+      </motion.p>
 
-            {item.skills ? (
-              <div className={styles.skillsContainer}>
-                {item.skills.map((skill, i) => (
-                  <motion.span
-                    key={i}
-                    className={styles.skill}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{
-                      delay: i * 0.08
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            ) : (
-              <p>{item.content}</p>
-            )}
-          </motion.div>
-        ))}
+      <div className={styles.grid}>
+        <motion.div
+          custom={0}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={`${styles.card} ${styles.largeCard}`}
+        >
+          <h3>Who I Am</h3>
+
+          <p>
+            I'm a BCA student and web developer who enjoys creating
+            modern, responsive, and interactive web applications.
+            I love combining clean design with practical
+            functionality to build experiences that feel intuitive,
+            engaging, and meaningful.
+          </p>
+        </motion.div>
+
+        <motion.div
+          custom={1}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          whileHover={{ y: -8 }}
+          className={styles.card}
+        >
+          <h3>Developer First</h3>
+
+          <p>
+            I enjoy transforming ideas into real products and
+            solving problems through thoughtful development and
+            hands-on project building.
+          </p>
+        </motion.div>
+
+        <motion.div
+          custom={2}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          whileHover={{ y: -8 }}
+          className={styles.card}
+        >
+          <h3>Design Focused</h3>
+
+          <p>
+            I pay attention to user experience, visual hierarchy,
+            responsiveness, and smooth interactions that make
+            applications enjoyable to use.
+          </p>
+        </motion.div>
+
+        <motion.div
+          custom={3}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          whileHover={{ y: -8 }}
+          className={styles.card}
+        >
+          <h3>Growth Mindset</h3>
+
+          <p>
+            I enjoy learning new technologies, collaborating with
+            others, and continuously improving both technical and
+            professional skills.
+          </p>
+        </motion.div>
+
+        <motion.div
+          custom={4}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className={`${styles.card} ${styles.statsCard}`}
+        >
+          <div className={styles.stat}>
+            <h4>10+</h4>
+            <span>Projects Built</span>
+          </div>
+
+          <div className={styles.stat}>
+            <h4>2+</h4>
+            <span>Years Learning</span>
+          </div>
+
+          <div className={styles.stat}>
+            <h4>∞</h4>
+            <span>Curiosity</span>
+          </div>
+        </motion.div>
       </div>
-
-
     </section>
   );
 };
