@@ -35,10 +35,10 @@ const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_a1ldzqo",
+        "template_hynq3p6",
         formRef.current,
-        "YOUR_PUBLIC_KEY"
+        "2qSglBA4bNDuZJUfs"
       )
       .then(() => {
         alert("Message sent successfully!");
@@ -46,7 +46,7 @@ const ContactSection = () => {
       })
       .catch((error) => {
         console.error(error);
-        alert("Failed to send message.");
+        alert("Failed to send message.", error);
       });
   };
 
@@ -121,7 +121,8 @@ const ContactSection = () => {
 
           <div className={styles.infoCards}>
             <div className={styles.infoCard}>
-              📧 shreyaalpha1@gmail.com
+              📧
+              <a href="mailto:shreyaalpha1@gmail.com" className="no-underline"> Shreya</a>
             </div>
 
             <div className={styles.infoCard}>
