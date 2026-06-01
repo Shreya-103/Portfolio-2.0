@@ -1,50 +1,190 @@
-import './contactform.module';
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import styles from "./contactform.module.css";
+
 const ContactSection = () => {
+  const cardRef = useRef(null);
+  const formRef = useRef();
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const rotateY = ((x / rect.width) - 0.5) * 15;
+    const rotateX = ((y / rect.height) - 0.5) * -15;
+
+    card.style.transform = `
+      perspective(1200px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+    `;
+  };
+
+  const resetTilt = () => {
+    cardRef.current.style.transform =
+      "perspective(1200px) rotateX(0) rotateY(0)";
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        formRef.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(() => {
+        alert("Message sent successfully!");
+        formRef.current.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Failed to send message.");
+      });
+  };
+
   return (
-    <section className="bg-[#f8fafc] py-20 px-6">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 rounded-3xl overflow-hidden border border-gray-200 shadow-2xl bg-white">
+    <section className={styles.contactSection} id="contact">
+      {/* Floating Background */}
+      <div className={styles.background}>
+        <div className={styles.blob1}></div>
+        <div className={styles.blob2}></div>
+      </div>
 
-        {/* Left Side */}
-        <div className="relative p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-gray-200 overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className={styles.container}>
+        {/* LEFT SIDE */}
 
-          {/* Soft Glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12),transparent_70%)]"></div>
+        <motion.div
+          className={styles.left}
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className={styles.orbit}
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          >
+            <div className={styles.circle}></div>
+          </motion.div>
 
-          {/* Grid Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.04)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+          <motion.div
+            className={styles.shape1}
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+            }}
+          />
 
-          <div className="relative z-10 p-2">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              Get in touch
-            </h2>
+          <motion.div
+            className={styles.shape2}
+            animate={{
+              y: [0, 20, 0],
+              rotate: [360, 180, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+            }}
+          />
 
-            <p className="text-gray-600 leading-8 max-w-md mb-12">
-             Have a project in mind, or internships, freelance work or any other opportunity,
-              Feel free to reach out. Let's connect.
-            </p>
+          <span className={styles.badge}>
+            🟢 Available for Opportunities
+          </span>
 
-            <div className="space-y-8 text-gray-700">
+          <h2>
+            Let's Create
+            <br />
+            Something Amazing
+          </h2>
 
-              {/* Address */}
-              <div className="flex items-start gap-4">
-                <div className="text-2xl">🔗</div>
-                <div>
-                  <p> Github Account:-  <a href="https://github.com/Shreya-103"> Shreya-103</a></p>
-                  <p>📍 India</p>
-                </div>
-              </div>
+          <p>
+            Have an idea, project, or collaboration in mind?
+            I'm always excited to build modern and engaging web experiences.
+          </p>
 
+          <div className={styles.infoCards}>
+            <div className={styles.infoCard}>
+              📧 shreyaalpha1@gmail.com
+            </div>
 
-              {/* Email */}
-              <div className="flex items-center gap-4">
-                <div className="text-2xl">✉️</div>
-                <a href='mailto:shreyaalpha1@gmail.com'>send mail to Shreya</a>
-              </div>
+            <div className={styles.infoCard}>
+              💼 LinkedIn Profile
+            </div>
 
+            <div className={styles.infoCard}>
+              🚀 GitHub Profile
             </div>
           </div>
-        </div>
+        </motion.div>
 
+        {/* RIGHT SIDE */}
+
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div
+            ref={cardRef}
+            className={styles.formCard}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={resetTilt}
+          >
+            <h3>Send a Message</h3>
+
+            <form ref={formRef} onSubmit={sendEmail}>
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Your Name"
+                required
+              />
+
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Your Email"
+                required
+              />
+
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+
+              <textarea
+                rows="5"
+                name="message"
+                placeholder="Your Message"
+                required
+              />
+
+              <button type="submit">
+                Send Message →
+              </button>
+            </form>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
