@@ -215,7 +215,7 @@ a{
     font-size: 3rem;
   }
 
-  .orbit, .shape1,
+ .shape1,
 .shape2, .circle{
     display: none;
   }
