@@ -7,6 +7,17 @@
   position: relative;
   overflow: hidden;
   padding: 8rem 4rem;
+/* background:
+radial-gradient(
+circle at top left,
+rgba(255,179,71,0.12),
+transparent 40%
+),
+radial-gradient(
+circle at bottom right,
+rgba(255,138,101,0.10),
+transparent 40%
+); */
 }
 
 /* PUSH CONTAINER SLIGHTLY RIGHT */
@@ -16,6 +27,7 @@
   height: 500px;
   margin-left: 40%;
   margin-top: 5%;
+  
 }
 
 /* FLOATING ICONS */
@@ -66,8 +78,9 @@
   font-family: 'Times New Roman', Times, serif;
 background: linear-gradient(
     135deg,
-    #2563eb,
-    #7c3aed
+  #ffb347,
+  #ff8a65,
+  #f4d03f
   );
     -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

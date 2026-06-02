@@ -1,235 +1,111 @@
-import Carousel from "react-bootstrap/Carousel";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import projects from "./project";
 import styles from "./projects.module.css";
 
-const Projects = () => {
-    return (
-        <section className={styles.projectSection}>
-            <h1 className={styles.heading}>Projects</h1>
+export default function Projects() {
+  const [active, setActive] = useState(0);
 
-            <Carousel fade interval={3000}>
-
-                {/* Project 1*/}
-                <Carousel.Item>
-                    <img
-                        className={styles.carouselImage}
-                        src="./Screenshot (30).png"
-                        alt="Landing page - bootstrap"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Landing page using bootstrap</h3>
-                        <p>
-                            Responsive landing page made using bootstrap components.
-                        </p>
-
-                        <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/Web-Using-Bootstrap" className={styles.link}>View</a>
-                        </button>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-                {/* Project 2*/}
-                <Carousel.Item>
-                    <img
-                        className={styles.carouselImage}
-                        src="./Screenshot (93).png"
-                        alt="Currency Converter"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Currency Converter</h3>
-                        <p>
-                            Real-time currency conversion using exchange rate API.
-                            Features include dynamic country flags, currency swapping, live conversion updates, API integration, and a
-                               clean mobile-friendly user interface.
-                        </p>
-                        <button className="btn btn-dark" >
-                            <a href="https://shreya-103.github.io/currency-converter" className={styles.link}>View</a>
-                        </button>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-                {/* Project 3 */}
-                <Carousel.Item>
-                    <img
-                        className={styles.carouselImage}
-                        src="./Screenshot (98).jpg"
-                        alt="Notes App"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Notes App</h3>
-                        <p>
-                             A responsive Notes App built using React that allows users to create, search, and manage notes efficiently
-                                with a clean and interactive UI.    
-                             Integrated localStorage for persistent data saving, dark mode support, real-time updates, and responsive
-                                 design for seamless usage across devices.         
-                       </p>
-                        <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/Notes-App" className={styles.link}>View</a>
-                        </button>
-                    </Carousel.Caption>
-                </Carousel.Item>
-
-
-                {/* Project last */}
-                <Carousel.Item>
-                    <img
-                        className={styles.carouselImage}
-                        src="./Screenshot (81).jpg"
-                        alt="Employee Entry System"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Employee Entry System</h3>
-                        <p>
-                            Secure employee login and management system developed during internship at BEL.
-                        </p>
-                        <p>
-                            EMPLOYEE CREDENTIALS: Employee ID: UPT223 | Password: 12345 </p>
-                            <p>
-                            ADMIN CREDENTIALS: Employee ID: admin | Password: 1234
-                        </p>
-
-                        <button className="btn btn-dark">
-                            <a href="https://shreya-103.github.io/employee-entry-login" className={styles.link}
-                        >View</a> </button>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </section>
+  const prevProject = () => {
+    setActive((prev) =>
+      prev === 0 ? projects.length - 1 : prev - 1
     );
-};
+  };
 
-export default Projects;
+  const nextProject = () => {
+    setActive((prev) =>
+      prev === projects.length - 1 ? 0 : prev + 1
+    );
+  };
 
-//  <div class="card">
-//         <img src="./images/Screenshot (30).png" alt="Packers and Movers">
-//         <div class="card-body">
-//           <h5 class="card-title">Packers & Movers Static</h5>
+  const getIndex = (index) => {
+    const diff = index - active;
 
-//           <p class="project-detail">
-//             Modern and responsive Packers & Movers landing page built using Bootstrap.
-//           </p>
+    if (diff === 0) return "center";
+    if (diff === -1 || diff === projects.length - 1)
+      return "left";
 
-//           <p class="project-detail">
-//             Features a clean dark-themed UI, mobile-friendly layout, smooth section spacing, and optimized design for
-//             all screen sizes.
-//           </p>
+    if (diff === 1 || diff === -(projects.length - 1))
+      return "right";
 
-//           <a href="https://shreya-103.github.io/Web-Using-Bootstrap" class="btn btn-secondary">View</a>
-//         </div>
-//       </div>
+    return "hidden";
+  };
 
+  return (
+    <section className={styles.projectsSection}>
+      <h2 className={styles.heading}>
+        Featured Projects
+      </h2>
 
-//       <!-- Card 3 -->
-//       <div class="card">
-//         <img src="./images/Screenshot (96).png" alt="Bond Calculator">
+      <div className={styles.carousel}>
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.id}
+            className={`${styles.card} ${
+              styles[getIndex(index)]
+            }`}
+            transition={{ duration: 0.5 }}
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+            />
+          </motion.div>
+        ))}
+      </div>
 
-//         <div class="card-body">
-//           <h5 class="card-title">Calculate Bond</h5>
+      <div className={styles.controls}>
+        <button onClick={prevProject}>
+          ←
+        </button>
 
-//           <p class="project-detail">
-//             Interactive JavaScript project that calculates a fun bond percentage between two names.
-//           </p>
+        <button onClick={nextProject}>
+          →
+        </button>
+      </div>
 
-//           <p class="project-detail">
-//             Uses random number generation in JavaScript to create dynamic results with a playful and engaging user
-//             experience.
-//           </p>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={projects[active].id}
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          exit={{
+            opacity: 0,
+            y: -20,
+          }}
+          className={styles.details}
+        >
+          <h3>{projects[active].title}</h3>
 
-//           <a href="https://shreya-103.github.io/Calculate-Bond/" class="btn btn-secondary">View</a>
-//         </div>
-//       </div>
+          <p>
+            {projects[active].description}
+          </p>
 
-//       <!-- Card 4 -->
-//       <div class="card">
-//         <img src="./images/Screenshot (68).png" alt="Tic Tac Toe">
+          <div className={styles.links}>
+            <a
+              href={projects[active].demo}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Live Demo
+            </a>
 
-//         <div class="card-body">
-//           <h5 class="card-title">Tic Tac Toe</h5>
-
-//           <p class="project-detail">
-//             Classic two-player Tic Tac Toe game developed using JavaScript.
-//           </p>
-
-//           <p class="project-detail">
-//             Includes responsive design, interactive gameplay, turn-based logic, and a clean modern user interface for
-//             smooth user experience.
-//           </p>
-
-//           <a href="https://shreya-103.github.io/tic-tac-toe/" class="btn btn-secondary" style="margin-top:1.5rem;">View</a>
-//         </div>
-//       </div>
-
-//       <!-- Card 6 -->
-//       <div class="card">
-//   <img src="./images/Screenshot (81).png" alt="employee-entry-system">
-
-//   <div class="card-body">
-//     <h5 class="card-title">Employee Entry System</h5>
-
-//     <p class="project-detail" style="font-size: 13px;">
-//       A role-based employee entry management system developed during my internship at BEL.
-//       Features separate employee and admin login authentication with a responsive UI.
-//     </p>
-
-//     <p class="project-detail" style="font-size: 13px;">
-//       Built using HTML, CSS, JavaScript.
-//     </p>
-
-//     <p class="project-detail">
-//       Employee ID: UPT223 | Password: 12345
-//     </p>
-
-//     <p class="project-detail">
-//       Admin: admin | Password: 1234
-//     </p>
-
-//     <a href="https://shreya-103.github.io/employee-entry-login"
-//        class="btn btn-secondary">
-//        View
-//     </a>
-//   </div>
-// </div>
-
-//       <!-- card 7-->
-//       <div class="card">
-//         <img src="./images/Screenshot (93).png" alt="Currency-Converter">
-//         <div class="card-body">
-//           <h5 class="card-title">Currency Converter</h5>
-//           <p class="project-detail">
-//             A responsive Currency Converter web app built using HTML, CSS, and JavaScript that converts currencies using
-//             real-time exchange rates.
-//           </p>
-
-//           <p class="project-detail">
-//             Features include dynamic country flags, currency swapping, live conversion updates, API integration, and a
-//             clean mobile-friendly user interface.
-//           </p>
-//           <a href="https://shreya-103.github.io/currency-converter/" class="btn btn-secondary">View</a>
-//         </div>
-//       </div>
-
-//       <!-- Card 8 -->
-//       <div class="card">
-//         <img src="./images/Screenshot (98).png" alt="Notes App">
-
-//         <div class="card-body">
-//           <h5 class="card-title">Notes App</h5>
-
-//           <p class="project-detail">
-//             A responsive Notes App built using React that allows users to create, search, and manage notes efficiently
-//             with a clean and interactive UI.
-//           </p>
-
-//           <p class="project-detail">
-//             Integrated localStorage for persistent data saving, dark mode support, real-time updates, and responsive
-//             design for seamless usage across devices.
-//           </p>
-
-//           <a href="https://shreya-103.github.io/Notes-App/" class="btn btn-secondary">
-//             View
-//           </a>
-//         </div>
-//       </div>
+            <a
+              href={projects[active].github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </section>
+  );
+}
