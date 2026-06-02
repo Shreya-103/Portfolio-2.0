@@ -79,7 +79,10 @@
   max-width: 500px;
   line-height: 1.8;
 }
-
+.alink{
+  color: black;
+  text-decoration: none;
+}
 .infoCards {
   margin-top: 2rem;
   display: flex;

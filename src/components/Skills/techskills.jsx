@@ -56,23 +56,23 @@ const TechSkills = () => {
     // MOBILE
     if (width < 768) {
       return {
-  x: (index % 3) * 170 + 50,
-  y: Math.floor(index / 3) * 130 + 40,
-};
+        x: (index % 3) * 170 + 50,
+        y: Math.floor(index / 3) * 130 + 40,
+      };
     }
 
     // TABLET
     if (width < 1024) {
       return {
-  x: (index % 3) * 170 + 50,
-  y: Math.floor(index / 3) * 130 + 40,
-};
+        x: (index % 3) * 170 + 50,
+        y: Math.floor(index / 3) * 130 + 40,
+      };
     }
 
     // DESKTOP
     return {
-  x: (index % 3) * 230 + 80,
-  y: Math.floor(index / 3) * 150 + 60,
+      x: (index % 3) * 230 + 80,
+      y: Math.floor(index / 3) * 150 + 60,
     };
   };
 
@@ -106,19 +106,19 @@ const TechSkills = () => {
                 animate={
                   inView
                     ? {
-                        x: position.x,
-                        y: position.y,
-                        rotate: 0,
-                        scale: 1,
-                        opacity: 1,
-                      }
+                      x: position.x,
+                      y: position.y,
+                      rotate: 0,
+                      scale: 1,
+                      opacity: 1,
+                    }
                     : {
-                        x: 0,
-                        y: 0,
-                        rotate: index * 5,
-                        scale: 0.8,
-                        opacity: 0,
-                      }
+                      x: 0,
+                      y: 0,
+                      rotate: index * 5,
+                      scale: 0.8,
+                      opacity: 0,
+                    }
                 }
                 transition={{
                   type: "spring",

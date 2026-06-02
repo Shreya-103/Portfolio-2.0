@@ -41,9 +41,8 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            className={`${styles.card} ${
-              styles[getIndex(index)]
-            }`}
+            className={`${styles.card} ${styles[getIndex(index)]
+              }`}
             transition={{ duration: 0.5 }}
           >
             <img

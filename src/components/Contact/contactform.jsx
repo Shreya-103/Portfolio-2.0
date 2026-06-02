@@ -120,18 +120,22 @@ const ContactSection = () => {
           </p>
 
           <div className={styles.infoCards}>
-            <div className={styles.infoCard}>
-              📧
-              <a href="mailto:shreyaalpha1@gmail.com" className="no-underline"> Shreya</a>
-            </div>
+            <a href="mailto:shreyaalpha1@gmail.com" className={styles.alink}>
+              <div className={styles.infoCard}>
+                📧 Mail to Shreya
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/shreya-jha-39235a374" className={styles.alink}>
+              <div className={styles.infoCard}>
+                💼 LinkedIn Profile
+              </div>
+            </a>
 
-            <div className={styles.infoCard}>
-              💼 LinkedIn Profile
-            </div>
-
-            <div className={styles.infoCard}>
-              🚀 GitHub Profile
-            </div>
+            <a href="https://github.com/Shreya-103" className={styles.alink}>
+              <div className={styles.infoCard}>
+                🐱‍👤 Check my GitHub Profile here
+              </div>
+            </a>
           </div>
         </motion.div>
 

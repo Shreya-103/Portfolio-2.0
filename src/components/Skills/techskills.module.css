@@ -11,21 +11,14 @@
 .wrapper {
   width: 100%;
   max-width: 1300px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 3rem;
 }
 
-/* ======================
-   DESKTOP HEADING
-====================== */
-
 .sideTag {
   flex: 0 0 220px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,93 +27,61 @@
 .sideTag h1 {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-
   font-size: 6rem;
   font-weight: 900;
-
   letter-spacing: 12px;
-
   font-family: "Times New Roman", Times, serif;
-
   background: linear-gradient(
     135deg,
     #ffb347,
     #ff8a65,
     #f4d03f
   );
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   opacity: 0.35;
 }
-
-/* ======================
-   MOBILE HEADING
-====================== */
 
 .mobileHeading {
   display: none;
 }
 
-/* ======================
-   SKILLS CONTAINER
-====================== */
-
 .container {
   position: relative;
-
   width: 760px;
   height: 520px;
-
   flex: 1;
 }
 
-/* ======================
-   SKILL CARDS
-====================== */
-
 .card {
   position: absolute;
-
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
-
   gap: 10px;
-
   cursor: pointer;
 }
 
 .card img {
   width: 72px;
   height: 72px;
-
   filter: drop-shadow(
     0 12px 24px rgba(0, 0, 0, 0.15)
   );
-
   transition: all 0.3s ease;
 }
 
 .card span {
   font-size: 0.95rem;
   font-weight: 600;
-
   color: #111827;
-
   letter-spacing: 1px;
 }
 
 .card:hover img {
   transform: translateY(-3px) scale(1.08);
 }
-
-/* ======================
-   LAPTOP
-====================== */
 
 @media (max-width: 1300px) {
   .wrapper {
@@ -142,9 +103,6 @@
   }
 }
 
-/* ======================
-   TABLET
-====================== */
 
 @media (max-width: 1024px) {
   .sectionII {
@@ -174,16 +132,11 @@
   }
 }
 
-/* ======================
-   MOBILE
-====================== */
 
 @media (max-width: 768px) {
   .sectionII {
     min-height: 100vh;
-
     padding: 6rem 1rem;
-
     flex-direction: column;
   }
 
@@ -197,33 +150,25 @@
 
   .mobileHeading {
     display: block;
-
     text-align: center;
-
     margin-bottom: 3rem;
-
     font-size: 4rem;
     font-weight: 900;
-
     font-family: "Times New Roman", Times, serif;
-
     background: linear-gradient(
       135deg,
       #ffb347,
       #ff8a65,
       #f4d03f
     );
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     opacity: 0.35;
   }
 
   .container {
     width: 320px;
     height: 520px;
-
     margin: 0 auto;
   }
 
