@@ -30,7 +30,6 @@ transparent 40%
   
 }
 
-/* FLOATING ICONS */
 .card {
   position: absolute;
 
@@ -62,7 +61,6 @@ transparent 40%
   transform: translateY(-1px) scale(1.1);
 }
 
-/* DESKTOP LEFT TAG */
 .sideTag {
   position: absolute;
   left: 1rem;
@@ -160,7 +158,7 @@ background: linear-gradient(
 
     letter-spacing: 6px;
 
-    background: linear-gradient(90deg, #103587, #1147b1);
+    background: linear-gradient(90deg, #ffb347,#ff8a65, #f4d03f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.4;

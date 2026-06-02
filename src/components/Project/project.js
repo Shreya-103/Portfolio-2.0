@@ -28,6 +28,24 @@ const project = [
     demo: "https://shreya-103.github.io/currency-converter",
     github: "https://github.com/Shreya-103/currency-converter",
   },
+  {
+    id: 4,
+    title: "Employee Entry System",
+    image: "./Screenshot (81).jpg",
+    description:
+      "Made this one during internship at BEL , Employee credentials for login: EmployeeID: UPT223 | Password: 12345, Admin credentials:- username: admin | password: 1234",
+    demo: "https://shreya-103.github.io/employee-entry-login",
+    github: "https://github.com/Shreya-103/employee-entry-login",
+  },
+  {
+    id: 5,
+    title: "Bond Check fun game",
+    image: "./Screenshot (96).png",
+    description:
+      "fun bond checking site with responsive and modern , dark mode toogle also available",
+    demo: "https://shreya-103.github.io/employee-entry-login",
+    github: "https://github.com/Shreya-103/employee-entry-login",
+  },
 ];
 
 export default project;
