@@ -43,8 +43,8 @@ const project = [
     image: "./Screenshot (96).png",
     description:
       "fun bond checking site with responsive and modern , dark mode toogle also available",
-    demo: "https://shreya-103.github.io/employee-entry-login",
-    github: "https://github.com/Shreya-103/employee-entry-login",
+    demo: "https://shreya-103.github.io/Calculate-Bond/",
+    github: "https://github.com/Shreya-103/Calculate-Bond",
   },
 ];
 
