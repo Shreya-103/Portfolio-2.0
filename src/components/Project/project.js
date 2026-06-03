@@ -39,10 +39,10 @@ const project = [
   },
   {
     id: 5,
-    title: "Bond Check fun game",
-    image: "./Screenshot (96).png",
+    title: "Friendship Analyzer fun game",
+    image: "./Friendship-Analyzer.png",
     description:
-      "fun bond checking site with responsive and modern , dark mode toogle also available",
+      "Friendship compatibility score generation, Friendship levels based on score, Loading animations, Dark mode support, Responsive design for mobile and desktop",
     demo: "https://shreya-103.github.io/Calculate-Bond/",
     github: "https://github.com/Shreya-103/Calculate-Bond",
   },
