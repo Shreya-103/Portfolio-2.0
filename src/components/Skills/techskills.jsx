@@ -56,8 +56,8 @@ const TechSkills = () => {
     // MOBILE
     if (width < 768) {
       return {
-        x: (index % 3) * 170 + 50,
-        y: Math.floor(index / 3) * 130 + 40,
+        x: (index % 2) * 170 + 50,
+        y: Math.floor(index / 2) * 130 + 40,
       };
     }
 
