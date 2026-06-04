@@ -31,10 +31,10 @@ const project = [
   {
     id: 4,
     title: "Employee Entry System",
-    image: "./Screenshot (81).jpg",
+    image: "./bel-project.png",
     description:
-      "Made this one during internship at BEL , Employee credentials for login: EmployeeID: UPT223 | Password: 12345, Admin credentials:- username: admin | password: 1234",
-    demo: "https://shreya-103.github.io/employee-entry-login",
+      "Full-stack Employee Entry System; Made during internship at BEL , Employee credentials for login: EmployeeID: UPT223 | Password: 12345, Admin credentials:- username: admin | password: 1234",
+    demo: "https://employee-entry-login.netlify.app",
     github: "https://github.com/Shreya-103/employee-entry-login",
   },
   {
