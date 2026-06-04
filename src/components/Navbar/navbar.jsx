@@ -1,0 +1,89 @@
+import { useEffect, useState } from "react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import styles from "./navbar.module.css";
+
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle(
+      "dark",
+      darkMode
+    );
+  }, [darkMode]);
+
+  const links = [
+    "About",
+    "Skills",
+    "Projects",
+    "Contact",
+  ];
+
+  return (
+    <nav
+      className={`${styles.navbar} ${
+        scrolled ? styles.scrolled : ""
+      }`}
+    >
+      <div className={styles.logo}>
+        &lt;Portfolio /&gt;
+      </div>
+
+      <ul
+        className={`${styles.navLinks} ${
+          open ? styles.active : ""
+        }`}
+      >
+        {links.map((link) => (
+          <li key={link}>
+            <a
+              href={`#${link.toLowerCase()}`}
+              onClick={() => setOpen(false)}
+            >
+              {link}
+            </a>
+          </li>
+        ))}
+
+        <button
+          className={styles.themeBtn}
+          onClick={() =>
+            setDarkMode(!darkMode)
+          }
+        >
+          {darkMode ? (
+            <Sun size={20} />
+          ) : (
+            <Moon size={20} />
+          )}
+        </button>
+      </ul>
+
+      <button
+        className={styles.mobileBtn}
+        onClick={() => setOpen(!open)}
+      >
+        {open ? (
+          <X size={28} />
+        ) : (
+          <Menu size={28} />
+        )}
+      </button>
+    </nav>
+  );
+};
+
+export default Navbar;

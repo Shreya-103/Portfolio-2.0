@@ -32,7 +32,7 @@ export default function Projects() {
   };
 
   return (
-    <section className={styles.projectsSection}>
+    <section className={styles.projectsSection} id="projects">
       <h2 className={styles.heading}>
         Featured Projects
       </h2>
@@ -52,7 +52,6 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
-
       <div className={styles.controls}>
         <button onClick={prevProject}>
           ←

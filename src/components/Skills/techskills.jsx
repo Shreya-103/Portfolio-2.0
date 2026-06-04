@@ -77,7 +77,7 @@ const TechSkills = () => {
   };
 
   return (
-    <section className={styles.sectionII} ref={ref}>
+    <section className={styles.sectionII} ref={ref} id="skills">
       <div className={styles.wrapper}>
         {/* Desktop Heading */}
         <div className={styles.sideTag}>
