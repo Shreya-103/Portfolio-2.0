@@ -116,7 +116,6 @@ export default function Projects() {
           </div>
         </motion.div>
       )}
-
       <div className={styles.controls}>
         <button onClick={prevProject}>
           ←
