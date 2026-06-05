@@ -1,5 +1,5 @@
 .sectionII {
-background: var(--bg);
+  background: var(--bg);
   min-height: 67vh;
   padding: 6rem 2rem;
   overflow: hidden;
@@ -31,12 +31,10 @@ background: var(--bg);
   font-weight: 900;
   letter-spacing: 12px;
   font-family: "Times New Roman", Times, serif;
-  background: linear-gradient(
-    135deg,
-   var(--primary),
-  var(--secondary),
-  var(--accent)
-  );
+  background: linear-gradient(135deg,
+      var(--primary),
+      var(--secondary),
+      var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0.35;
@@ -66,22 +64,21 @@ background: var(--bg);
 .card img {
   width: 72px;
   height: 72px;
-  filter: drop-shadow(
-    0 12px 24px rgba(0, 0, 0, 0.15)
-  );
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
   transition: all 0.3s ease;
 }
 
 .card span {
   font-size: 0.95rem;
   font-weight: 600;
-color: var(--text-primary);
+  color: var(--text-primary);
   letter-spacing: 1px;
 }
 
 .card:hover img {
   transform: translateY(-3px) scale(1.08);
 }
+
 .dark .sideTag h1,
 .dark .mobileHeading {
   opacity: 0.18;
@@ -159,12 +156,10 @@ color: var(--text-primary);
     font-size: 4rem;
     font-weight: 900;
     font-family: "Times New Roman", Times, serif;
-    background: linear-gradient(
-      135deg,
-      var(--primary),
-  var(--secondary),
-  var(--accent)
-    );
+    background: linear-gradient(135deg,
+        var(--primary),
+        var(--secondary),
+        var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.35;
