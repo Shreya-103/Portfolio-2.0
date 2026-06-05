@@ -138,3 +138,96 @@
   var(--accent)
     );
 }
+/* ======================
+   MOBILE PROJECT SHOWCASE
+====================== */
+
+.phoneMockup {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    display: none;
+  }
+
+  .phoneMockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 2rem;
+
+    perspective: 1500px;
+  }
+
+  .phoneFrame {
+    width: 260px;
+    height: 520px;
+
+    padding: 12px;
+
+    border-radius: 38px;
+
+    background: #111827;
+
+    box-shadow:
+      var(--project-shadow);
+
+    position: relative;
+  }
+
+  .phoneFrame::before {
+    content: "";
+
+    position: absolute;
+
+    top: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90px;
+    height: 24px;
+
+    border-radius: 20px;
+
+    background: #000;
+  }
+
+  .phoneFrame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 28px;
+  }
+
+  .controls {
+    margin-top: 1rem;
+  }
+
+  .details {
+    margin-top: 1.5rem;
+  }
+
+  .details h3 {
+    font-size: 1.5rem;
+  }
+
+  .details p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links a {
+    width: 220px;
+    text-align: center;
+  }
+}

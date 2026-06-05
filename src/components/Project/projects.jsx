@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import projects from "./project";
 import styles from "./projects.module.css";
@@ -6,15 +6,42 @@ import styles from "./projects.module.css";
 export default function Projects() {
   const [active, setActive] = useState(0);
 
+  const [isMobile, setIsMobile] = useState(
+  typeof window !== "undefined"
+    ? window.innerWidth < 768
+    : false
+);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
+
+    return () =>
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
+  }, []);
+
   const prevProject = () => {
     setActive((prev) =>
-      prev === 0 ? projects.length - 1 : prev - 1
+      prev === 0
+        ? projects.length - 1
+        : prev - 1
     );
   };
 
   const nextProject = () => {
     setActive((prev) =>
-      prev === projects.length - 1 ? 0 : prev + 1
+      prev === projects.length - 1
+        ? 0
+        : prev + 1
     );
   };
 
@@ -22,36 +49,74 @@ export default function Projects() {
     const diff = index - active;
 
     if (diff === 0) return "center";
-    if (diff === -1 || diff === projects.length - 1)
+
+    if (
+      diff === -1 ||
+      diff === projects.length - 1
+    )
       return "left";
 
-    if (diff === 1 || diff === -(projects.length - 1))
+    if (
+      diff === 1 ||
+      diff === -(projects.length - 1)
+    )
       return "right";
 
     return "hidden";
   };
 
   return (
-    <section className={styles.projectsSection} id="projects">
+    <section
+      className={styles.projectsSection}
+      id="projects"
+    >
       <h2 className={styles.heading}>
         Featured Projects
       </h2>
 
-      <div className={styles.carousel}>
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            className={`${styles.card} ${styles[getIndex(index)]
+      {!isMobile ? (
+        <div className={styles.carousel}>
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className={`${styles.card} ${
+                styles[getIndex(index)]
               }`}
-            transition={{ duration: 0.5 }}
-          >
+              transition={{
+                duration: 0.5,
+              }}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+              />
+            </motion.div>
+          ))}
+        </div>
+      ) : (
+        <motion.div
+          className={styles.phoneMockup}
+          whileTap={{
+            rotateY: 8,
+            rotateX: -8,
+          }}
+          animate={{
+            y: [0, -8, 0],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+          }}
+        >
+          <div className={styles.phoneFrame}>
             <img
-              src={project.image}
-              alt={project.title}
+              src={projects[active].image}
+              alt={projects[active].title}
             />
-          </motion.div>
-        ))}
-      </div>
+          </div>
+        </motion.div>
+      )}
+
       <div className={styles.controls}>
         <button onClick={prevProject}>
           ←
@@ -77,12 +142,20 @@ export default function Projects() {
             opacity: 0,
             y: -20,
           }}
+          transition={{
+            duration: 0.3,
+          }}
           className={styles.details}
         >
-          <h3>{projects[active].title}</h3>
+          <h3>
+            {projects[active].title}
+          </h3>
 
           <p>
-            {projects[active].description}
+            {
+              projects[active]
+                .description
+            }
           </p>
 
           <div className={styles.links}>
