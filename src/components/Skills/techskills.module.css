@@ -1,5 +1,5 @@
 .sectionII {
-  background: #fafafa;
+background: var(--bg);
   min-height: 67vh;
   padding: 6rem 2rem;
   overflow: hidden;
@@ -33,9 +33,9 @@
   font-family: "Times New Roman", Times, serif;
   background: linear-gradient(
     135deg,
-    #ffb347,
-    #ff8a65,
-    #f4d03f
+   var(--primary),
+  var(--secondary),
+  var(--accent)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -75,12 +75,16 @@
 .card span {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #111827;
+color: var(--text-primary);
   letter-spacing: 1px;
 }
 
 .card:hover img {
   transform: translateY(-3px) scale(1.08);
+}
+.dark .sideTag h1,
+.dark .mobileHeading {
+  opacity: 0.18;
 }
 
 @media (max-width: 1300px) {
@@ -157,9 +161,9 @@
     font-family: "Times New Roman", Times, serif;
     background: linear-gradient(
       135deg,
-      #ffb347,
-      #ff8a65,
-      #f4d03f
+      var(--primary),
+  var(--secondary),
+  var(--accent)
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

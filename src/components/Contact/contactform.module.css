@@ -1,6 +1,6 @@
 .contactSection {
   min-height: 100vh;
-  background: #fafafa;
+  background: var(--bg);
   position: relative;
   overflow: hidden;
   padding: 6rem 2rem;
@@ -37,7 +37,7 @@
 .blob1 {
   width: 350px;
   height: 350px;
-  background: rgba(255, 179, 71, 0.2);
+  background: var(--surface);
   top: -80px;
   left: -80px;
 }
@@ -45,7 +45,7 @@
 .blob2 {
   width: 400px;
   height: 400px;
-  background: rgba(255, 138, 101, 0.15);
+  background: var(--surface);
   bottom: -100px;
   right: -100px;
 }
@@ -59,7 +59,7 @@
 .badge {
   display: inline-block;
   padding: 0.8rem 1.3rem;
-  background: white;
+  background: var(--input);
   border-radius: 999px;
   box-shadow: 0 10px 30px rgba(0,0,0,.06);
   margin-bottom: 1.5rem;
@@ -69,18 +69,18 @@
 .left h2 {
   font-size: 4rem;
   line-height: 1.1;
-  color: #111827;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
 
 .left p {
   font-size: 1.1rem;
-  color: #6b7280;
+  color: var(--text-secondary);
   max-width: 500px;
   line-height: 1.8;
 }
 .alink{
-  color: black;
+  color: var(--text-primary);
   text-decoration: none;
 }
 .infoCards {
@@ -91,11 +91,11 @@
 }
 
 .infoCard {
-  background: rgba(255,255,255,.8);
+  background: var(--surface);
   backdrop-filter: blur(15px);
   padding: 1.1rem;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,.6);
+  border: 1px solid var(--surface);
   box-shadow: 0 15px 30px rgba(0,0,0,.05);
 }
 a{
@@ -127,7 +127,7 @@ a{
 .shape1 {
   width: 60px;
   height: 60px;
-  background: #ffb347;
+  background: var(--primary);
   border-radius: 18px;
   right: 120px;
   top: 30px;
@@ -136,7 +136,7 @@ a{
 .shape2 {
   width: 50px;
   height: 50px;
-  background: #ff8a65;
+  background: var(--secondary);
   border-radius: 50%;
   right: 30px;
   top: 180px;
@@ -147,12 +147,11 @@ a{
 .formCard {
   padding: 3rem;
   border-radius: 35px;
-  background: rgba(255,255,255,.7);
+  background: var(--surface);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,.8);
+  border: 1px solid var(--surface);
   box-shadow:
-    0 25px 60px rgba(0,0,0,.08),
-    0 0 40px rgba(255,179,71,.15);
+   var(--contact-shadow);
   transition: .15s ease;
   transform-style: preserve-3d;
 }
@@ -160,7 +159,7 @@ a{
 .formCard h3 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #111827;
+  color: var(--text-secondary);
 }
 
 .formCard form {
@@ -174,7 +173,7 @@ a{
   border: none;
   padding: 1rem 1.2rem;
   border-radius: 16px;
-  background: white;
+  background: var(--input);
   font-size: 1rem;
   outline: none;
   transition: .3s;
@@ -192,11 +191,11 @@ a{
   cursor: pointer;
   border-radius: 18px;
   font-weight: 700;
-  color: white;
+  color: var(--surface);
   background: linear-gradient(
     135deg,
-    #ffb347,
-    #ff8a65
+    var(--primary),
+  var(--accent)
   );
   transition: .3s;
 }
