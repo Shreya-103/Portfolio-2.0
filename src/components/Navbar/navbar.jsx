@@ -19,11 +19,14 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle(
-      "dark",
-      darkMode
-    );
-  }, [darkMode]);
+  if (darkMode) {
+    document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+}, [darkMode]);
 
   const links = [
     "About",
