@@ -147,83 +147,77 @@
     );
 }
 
-.phoneMockup {
-  display: none;
-}
-
 @media (max-width: 768px) {
+
   .carousel {
     display: none;
   }
 
-  .phoneMockup {
+  .mobileDeck {
+    position: relative;
+    width: 100%;
+    height: 420px;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin-bottom: 2rem;
-
-    perspective: 1500px;
   }
 
-  .phoneFrame {
-    width: 260px;
-    height: 520px;
-
-    padding: 12px;
-
-    border-radius: 38px;
-
-    background: #111827;
-
-    box-shadow:
-      var(--project-shadow);
-
-    position: relative;
-  }
-
-  .phoneFrame::before {
-    content: "";
-
+  .deckCard {
     position: absolute;
 
-    top: 10px;
-    left: 50%;
+    width: 90%;
+    max-width: 340px;
 
-    transform: translateX(-50%);
+    border-radius: 24px;
 
-    width: 90px;
-    height: 24px;
+    overflow: hidden;
 
-    border-radius: 20px;
+    background: var(--surface);
 
-    background: #000;
+    box-shadow: var(--project-shadow);
+
+    transition: all 0.5s ease;
   }
 
-  .phoneFrame img {
+  .deckCard img {
     width: 100%;
-    height: 100%;
-
+    height: 220px;
     object-fit: cover;
-
-    border-radius: 28px;
   }
 
-  .controls {
-    margin-top: 1rem;
+  .deckCard.active {
+    transform:
+      translateY(0)
+      scale(1);
+
+    z-index: 3;
+  }
+
+  .deckCard.next {
+    transform:
+      translateY(20px)
+      scale(0.94);
+
+    opacity: 0.8;
+
+    z-index: 2;
+  }
+
+  .deckCard.last {
+    transform:
+      translateY(40px)
+      scale(0.88);
+
+    opacity: 0.55;
+
+    z-index: 1;
   }
 
   .details {
-    margin-top: 1.5rem;
-  }
-
-  .details h3 {
-    font-size: 1.5rem;
-  }
-
-  .details p {
-    font-size: 0.95rem;
-    padding: 0 1rem;
+    margin-top: 0;
   }
 
   .links {

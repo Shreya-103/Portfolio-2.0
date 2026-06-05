@@ -7,20 +7,17 @@ export default function Projects() {
   const [active, setActive] = useState(0);
 
   const [isMobile, setIsMobile] = useState(
-  typeof window !== "undefined"
-    ? window.innerWidth < 768
-    : false
-);
+    typeof window !== "undefined"
+      ? window.innerWidth < 768
+      : false
+  );
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    window.addEventListener(
-      "resize",
-      handleResize
-    );
+    window.addEventListener("resize", handleResize);
 
     return () =>
       window.removeEventListener(
@@ -74,6 +71,7 @@ export default function Projects() {
         Featured Projects
       </h2>
 
+      {/* DESKTOP COVERFLOW */}
       {!isMobile ? (
         <div className={styles.carousel}>
           {projects.map((project, index) => (
@@ -94,28 +92,59 @@ export default function Projects() {
           ))}
         </div>
       ) : (
-        <motion.div
-          className={styles.phoneMockup}
-          whileTap={{
-            rotateY: 8,
-            rotateX: -8,
-          }}
-          animate={{
-            y: [0, -8, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-          }}
-        >
-          <div className={styles.phoneFrame}>
-            <img
-              src={projects[active].image}
-              alt={projects[active].title}
-            />
-          </div>
-        </motion.div>
+        /* MOBILE STACKED DECK */
+        <div className={styles.mobileDeck}>
+          {projects.map((project, index) => {
+            let position = "";
+
+            if (index === active) {
+              position = "active";
+            } else if (
+              index ===
+              (active + 1) %
+                projects.length
+            ) {
+              position = "next";
+            } else if (
+              index ===
+              (active + 2) %
+                projects.length
+            ) {
+              position = "last";
+            } else {
+              return null;
+            }
+
+            return (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{
+                  opacity: 0,
+                  y: 50,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.4,
+                }}
+                className={`${styles.deckCard} ${
+                  styles[position]
+                }`}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                />
+              </motion.div>
+            );
+          })}
+        </div>
       )}
+
+      {/* CONTROLS */}
       <div className={styles.controls}>
         <button onClick={prevProject}>
           ←
@@ -126,6 +155,7 @@ export default function Projects() {
         </button>
       </div>
 
+      {/* DETAILS */}
       <AnimatePresence mode="wait">
         <motion.div
           key={projects[active].id}
