@@ -31,11 +31,8 @@
   font-weight: 900;
   letter-spacing: 12px;
   font-family: "Times New Roman", Times, serif;
-  background: linear-gradient(135deg,
-      var(--primary),
-      var(--secondary),
-      var(--accent));
-  -webkit-background-clip: text;
+  background: linear-gradient(135deg,  var(--primary), var(--secondary), var(--accent));
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0.35;
 }
@@ -156,11 +153,8 @@
     font-size: 4rem;
     font-weight: 900;
     font-family: "Times New Roman", Times, serif;
-    background: linear-gradient(135deg,
-        var(--primary),
-        var(--secondary),
-        var(--accent));
-    -webkit-background-clip: text;
+    background: linear-gradient(135deg, var(--primary),  var(--secondary),  var(--accent));
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.35;
   }

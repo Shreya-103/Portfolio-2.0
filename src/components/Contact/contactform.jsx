@@ -127,7 +127,7 @@ const ContactSection = () => {
             </a>
             <a href="https://www.linkedin.com/in/shreya-jha-39235a374" className={styles.alink}>
               <div className={styles.infoCard}>
-                💼 LinkedIn Profile
+                💼 Check LinkedIn Profile here
               </div>
             </a>
 
@@ -156,37 +156,13 @@ const ContactSection = () => {
             <h3>Send a Message</h3>
 
             <form ref={formRef} onSubmit={sendEmail}>
-              <input
-                type="text"
-                name="user_name"
-                placeholder="Your Name"
-                required
-              />
 
-              <input
-                type="email"
-                name="user_email"
-                placeholder="Your Email"
-                required
-              />
-
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                required
-              />
-
-              <textarea
-                rows="5"
-                name="message"
-                placeholder="Your Message"
-                required
-              />
-
-              <button type="submit">
-                Send Message →
-              </button>
+              <input type="text" name="user_name"  placeholder="Your Name" required />
+              <input  type="email"  name="user_email"  placeholder="Your Email"  required />
+              <input type="text" name="subject" placeholder="Subject" required/>
+              <textarea  rows="5"  name="message"  placeholder="Your Message"  required />
+              <button type="submit"> Send Message → </button>
+              
             </form>
           </div>
         </motion.div>
