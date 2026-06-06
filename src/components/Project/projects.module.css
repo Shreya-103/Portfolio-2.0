@@ -10,13 +10,8 @@
   font-size: clamp(2.8rem, 5vw, 4rem);
   font-weight: 800;
   margin-bottom: 1rem;
-
-  background: linear-gradient(135deg,
-      var(--primary),
-      var(--secondary),
-      var(--accent));
-
-  -webkit-background-clip: text;
+  background: linear-gradient(135deg,  var(--primary), var(--secondary), var(--accent));
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -117,6 +112,5 @@
   }
   .left, .right{
     opacity:0.7;
-  }
-  
+  } 
 }

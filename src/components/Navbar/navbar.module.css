@@ -1,83 +1,55 @@
 .navbar {
   position: fixed;
-
   top: 20px;
   left: 50%;
-
   transform: translateX(-50%);
-
   width: min(1200px, 92%);
-
   padding: 1rem 2rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   z-index: 999;
-
   border-radius: 22px;
-
   transition: all 0.3s ease;
 }
 
 .scrolled {
-  background: color-mix(
-    in srgb,
-    var(--surface) 85%,
-    transparent
-  );
-
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
   backdrop-filter: blur(15px);
-
   border: 1px solid var(--border);
-
   box-shadow: var(--navbar-shadow);
 }
 
 .logo {
   font-size: 1.2rem;
   font-weight: 700;
-color: var(--text-primary);
+  color: var(--text-primary);
 }
 
 .navLinks {
   display: flex;
   align-items: center;
   gap: 2rem;
-
   list-style: none;
 }
 
 .navLinks a {
   text-decoration: none;
-
- color: var(--text-primary);
+  color: var(--text-primary);
   font-weight: 500;
-
   position: relative;
 }
 
 .navLinks a::after {
   content: "";
-
   position: absolute;
-
   left: 0;
   bottom: -4px;
-
   width: 0%;
   height: 2px;
-
   transition: 0.3s;
-
   background:
-    linear-gradient(
-      135deg,
-     var(--primary),
-  var(--secondary),
-  var(--accent)
-    );
+    linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
 }
 
 .navLinks a:hover::after {
@@ -87,31 +59,23 @@ color: var(--text-primary);
 .themeBtn {
   width: 42px;
   height: 42px;
-
   border: none;
-
   border-radius: 50%;
-
   cursor: pointer;
-
   background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-  var(--secondary),
-  var(--accent)
-    );
-
+    linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
   color: var(--surface);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .themeBtn:hover {
   transform: rotate(20deg) scale(1.1);
 }
-.themeBtn:active{
+
+.themeBtn:active {
   border: none;
 }
 
@@ -122,8 +86,6 @@ color: var(--text-primary);
   cursor: pointer;
 }
 
-/* MOBILE */
-
 @media (max-width: 768px) {
   .mobileBtn {
     display: block;
@@ -131,23 +93,15 @@ color: var(--text-primary);
 
   .navLinks {
     position: absolute;
-
     top: 80px;
     left: 0;
     right: 0;
-
     flex-direction: column;
-
     gap: 1.5rem;
-
     padding: 2rem;
-
     border-radius: 20px;
-
     background: var(--surface);
-
     backdrop-filter: blur(15px);
-
     display: none;
   }
 
