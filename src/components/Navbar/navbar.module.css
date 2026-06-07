@@ -25,6 +25,18 @@
   font-weight: 700;
   color: var(--text-primary);
 }
+.cursor {
+  animation: blink 4s ease-out;
+}
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  1%,
+  100% {
+    opacity: 0;
+  }
+}
 
 .navLinks {
   display: flex;

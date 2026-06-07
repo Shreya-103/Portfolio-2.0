@@ -71,6 +71,21 @@ const Navbar = () => {
     "Contact",
   ];
 
+  const [typedText, setTypedText] = useState("");
+
+  useEffect(() => {
+  const text = "<Portfolio />";
+  let index = 0;
+  const interval = setInterval(() => {
+    setTypedText(text.slice(0, index + 1));
+    index++;
+    if (index === text.length) {
+      clearInterval(interval);
+    }
+  }, 120);
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <nav
       ref={navRef}
@@ -79,8 +94,9 @@ const Navbar = () => {
       }`}
     >
       <div className={styles.logo}>
-        &lt;Portfolio /&gt;
-      </div>
+  {typedText}
+  <span className={styles.cursor}></span>
+</div>
 
       <ul
         className={`${styles.navLinks} ${
