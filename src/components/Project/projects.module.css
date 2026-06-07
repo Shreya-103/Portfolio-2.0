@@ -1,3 +1,6 @@
+.projectsSection{
+  background: var(--bg);
+}
 .desktopCarousel {
   min-height: 100vh;
   padding: 6rem 2rem;
@@ -160,7 +163,7 @@
   }
 
   .mobileProject img {
-    width: 45%;
+    width: 48%;
     aspect-ratio: 9/16;
      /* height: 80%; */
     border-radius: 18px;
@@ -174,7 +177,6 @@
   }
 
   .projectContent h3 {
-
     font-size: 1.4rem;
     color: var(--text-primary);
     margin-bottom: 1rem;
@@ -197,7 +199,8 @@
     text-decoration: none;
     padding: 0.6rem 1rem;
     border-radius: 10px;
-    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(accent));
+    color: white;
     font-size: 0.8rem;
     font-weight: 600;
   }

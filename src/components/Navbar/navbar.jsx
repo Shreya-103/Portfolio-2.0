@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import styles from "./navbar.module.css";
 
@@ -6,6 +6,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,14 +21,48 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-  if (darkMode) {
-    document.body.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  } else {
-    document.body.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  }
-}, [darkMode]);
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        open &&
+        navRef.current &&
+        !navRef.current.contains(e.target)
+      ) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
+
+    document.addEventListener(
+      "touchstart",
+      handleClickOutside
+    );
+
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+
+      document.removeEventListener(
+        "touchstart",
+        handleClickOutside
+      );
+    };
+  }, [open]);
 
   const links = [
     "About",
@@ -37,6 +73,7 @@ const Navbar = () => {
 
   return (
     <nav
+      ref={navRef}
       className={`${styles.navbar} ${
         scrolled ? styles.scrolled : ""
       }`}
