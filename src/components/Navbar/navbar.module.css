@@ -95,6 +95,7 @@
   display: none;
   border: none;
   background: transparent;
+  color: var(--primary);
   cursor: pointer;
 }
 
