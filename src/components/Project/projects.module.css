@@ -123,18 +123,19 @@
     display: none;
   }
   .projectsSection {
-    min-height: 120vh;
+    min-height: auto;
     padding: 3rem 1.25rem;
   }
 
   .mobileProjects {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1.5rem;
-    padding-bottom: 1rem;
-    scrollbar-width: none;
-    height: 100%;
+    flex-direction: column;
+    overflow-x: visible;
+    /* scroll-snap-type: x mandatory; */
+    gap: 3rem;
+    /* padding-bottom: 1rem; */
+    /* scrollbar-width: none; */
+    /* height: 100%; */
   }
 
   .mobileProjects::-webkit-scrollbar {
@@ -142,44 +143,45 @@
   }
 
   .mobileSlide {
-    min-width: 100%;
-    scroll-snap-align: center;
+    /* min-width: 100%; */
+    /* scroll-snap-align: center; */
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    height: 80%;
+    /* height: 80%; */
   }
 
   .mobileProject {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     gap: 1rem;
-    height:50vh;
+    /* height:50vh; */
   }
 
   .mobileProject img {
     width: 45%;
-     height: 80%;
+    aspect-ratio: 9/16;
+     /* height: 80%; */
     border-radius: 18px;
     box-shadow: var(--project-shadow);
     object-fit:cover;
   }
 
   .projectContent {
-    width: 50%;   
-     height: 50vh;
+    width: 52%;   
+     /* height: 50vh; */
   }
 
   .projectContent h3 {
 
-    font-size: auto;
+    font-size: 1.4rem;
     color: var(--text-primary);
-    margin: 3rem 0;
+    margin-bottom: 1rem;
   }
 
   .projectContent p {
-    font-size: auto;
+    font-size: 1rem;
     line-height: 1.6;
     color: var(--text-secondary);
     margin-bottom: 0.8rem;
@@ -188,10 +190,13 @@
   .mobileLinks {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .mobileLinks a {
     text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
     color: var(--primary);
     font-size: 0.8rem;
     font-weight: 600;
