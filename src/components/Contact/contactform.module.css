@@ -217,10 +217,9 @@ a{
     font-size: 3rem;
   }
 
- .shape1,
-.shape2, .circle{
+ .shape2{
     display: none;
-  }
+  } 
 }
 
 @media (max-width: 600px) {

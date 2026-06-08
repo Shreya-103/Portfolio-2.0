@@ -200,7 +200,7 @@
     padding: 0.6rem 1rem;
     border-radius: 10px;
     background: linear-gradient(135deg, var(--primary), var(accent));
-    color: white;
+    color: var(--primary);
     font-size: 0.8rem;
     font-weight: 600;
   }

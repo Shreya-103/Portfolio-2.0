@@ -156,7 +156,7 @@
     background: linear-gradient(135deg, var(--primary),  var(--secondary),  var(--accent));
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    opacity: 0.35;
+    opacity: 0.5;
   }
 
   .container {
