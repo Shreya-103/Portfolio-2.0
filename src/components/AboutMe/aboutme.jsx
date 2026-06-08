@@ -14,8 +14,7 @@ const cardVariants = {
     scale: 1,
     filter: "blur(0px)",
     transition: {
-      duration: 0.7,
-      delay: i * 0.15
+       duration: 0.7, delay: i * 0.15
     }
   })
 };
@@ -130,7 +129,7 @@ const AboutMe = () => {
           className={`${styles.card} ${styles.statsCard}`}
         >
           <div className={styles.stat}>
-            <h4>10+</h4>
+            <h4>5+</h4>
             <span>Projects Built</span>
           </div>
 
