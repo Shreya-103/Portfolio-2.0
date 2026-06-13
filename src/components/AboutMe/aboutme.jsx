@@ -94,7 +94,6 @@ const AboutMe = () => {
           className={styles.card}
         >
           <h3>Design Focused</h3>
-
           <p>
             I pay attention to user experience, visual hierarchy,
             responsiveness, and smooth interactions that make

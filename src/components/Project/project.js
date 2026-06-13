@@ -20,7 +20,7 @@ const project = [
   {
     id: 3,
     title: "Notes App",
-    image: "./Screenshot (98).jpg",
+    image: "./notes-app.jpg",
     description:
       "A responsive Notes App built using React that allows users to create, search, and manage notes efficiently with a clean and interactive UI. Integrated localStorage for persistent data saving, dark mode support, real-time updates, and responsive design for seamless usage across devices.",
     demo: "https://shreya-103.github.io/Notes-App",
