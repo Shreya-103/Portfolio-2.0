@@ -105,7 +105,7 @@
 .glow1 {
   width: 350px;
   height: 350px;
-  background: #3b82f6;
+  background: var(--bg);
   border-radius: 50%;
   filter: blur(140px);
   opacity: 0.12;
@@ -117,7 +117,7 @@
 .glow2 {
   width: 350px;
   height: 350px;
-  background: #7c3aed;
+  background: var(--bg);
   border-radius: 50%;
   filter: blur(140px);
   opacity: 0.12;
