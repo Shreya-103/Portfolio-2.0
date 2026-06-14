@@ -1,5 +1,3 @@
-# Portfolio
-
 # Portfolio 2.0
 
 A modern and interactive developer portfolio built with **React**, showcasing my projects, technical skills, and professional journey. This portfolio was designed with a focus on clean UI, smooth animations, responsiveness, and user experience.
@@ -9,10 +7,8 @@ A modern and interactive developer portfolio built with **React**, showcasing my
 Add your deployed portfolio link here:
 
 ```bash
-https://your-portfolio-link.com
+https://shreya-103.github.io/Portfolio-2.0
 ```
-
----
 
 ## Features
 
@@ -26,7 +22,6 @@ https://your-portfolio-link.com
 * Clean component-based architecture
 * Easy-to-maintain and scalable code structure
 
----
 
 ## Tech Stack
 
@@ -43,7 +38,6 @@ https://your-portfolio-link.com
 * GitHub
 * Vite
 
----
 
 ## Project Structure
 
@@ -66,7 +60,6 @@ src/
 └── styles/
 ```
 
----
 
 ## Installation
 
@@ -94,7 +87,6 @@ Start the development server:
 npm run dev
 ```
 
----
 
 ## Build for Production
 
@@ -108,7 +100,6 @@ Preview production build:
 npm run preview
 ```
 
----
 
 ## Sections
 
@@ -132,7 +123,6 @@ Showcase of featured projects with descriptions, live demos, and source code lin
 
 Functional contact form allowing visitors to connect directly.
 
----
 
 ## What I Learned
 
@@ -145,7 +135,6 @@ Building Portfolio 2.0 helped me improve my understanding of:
 * Performance optimization
 * Building scalable frontend applications
 
----
 
 ## Future Improvements
 
@@ -155,18 +144,13 @@ Building Portfolio 2.0 helped me improve my understanding of:
 * Additional animations and interactions
 * Backend-powered contact management
 
----
 
 ## License
 
 This project is open source and available under the MIT License.
 
----
-
 ## Author
 
-**Your Name**
+**Shreya**
 
-GitHub: https://github.com/your-username
-
-LinkedIn: https://linkedin.com/in/your-profile
+GitHub: https://github.com/Shreya-103
