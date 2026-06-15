@@ -4,8 +4,6 @@ A modern and interactive developer portfolio built with **React**, showcasing my
 
 ## Live Demo
 
-Add your deployed portfolio link here:
-
 ```bash
 https://shreya-103.github.io/Portfolio-2.0
 ```
