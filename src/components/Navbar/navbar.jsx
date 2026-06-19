@@ -32,114 +32,64 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (
-        open &&
-        navRef.current &&
-        !navRef.current.contains(e.target)
-      ) {
+      if (open && navRef.current && !navRef.current.contains(e.target)) {
         setOpen(false);
       }
     };
 
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
-
-    document.addEventListener(
-      "touchstart",
-      handleClickOutside
-    );
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
-
-      document.removeEventListener(
-        "touchstart",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, [open]);
 
-  const links = [
-    "About",
-    "Skills",
-    "Projects",
-    "Contact",
-  ];
+  const links = ["About", "Skills", "Projects", "Contact",];
 
   const [typedText, setTypedText] = useState("");
 
   useEffect(() => {
-  const text = "<Portfolio />";
-  let index = 0;
-  const interval = setInterval(() => {
-    setTypedText(text.slice(0, index + 1));
-    index++;
-    if (index === text.length) {
-      clearInterval(interval);
-    }
-  }, 120);
+    const text = "<Portfolio />";
+    let index = 0;
+    const interval = setInterval(() => {
+      setTypedText(text.slice(0, index + 1));
+      index++;
+      if (index === text.length) {
+        clearInterval(interval);
+      }
+    }, 120);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
   return (
-    <nav
-      ref={navRef}
-      className={`${styles.navbar} ${
-        scrolled ? styles.scrolled : ""
-      }`}
-    >
+    <nav ref={navRef} className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
-  {typedText}
-  <span className={styles.cursor}></span>
-</div>
+        {typedText}
+        <span className={styles.cursor}></span>
+      </div>
 
-      <ul
-        className={`${styles.navLinks} ${
-          open ? styles.active : ""
-        }`}
-      >
+      <ul className={`${styles.navLinks} ${open ? styles.active : ""}`}>
         {links.map((link) => (
           <li key={link}>
-            <a
-              href={`#${link.toLowerCase()}`}
-              onClick={() => setOpen(false)}
-            >
-              {link}
-            </a>
+            <a href={`#${link.toLowerCase()}`} onClick={() => setOpen(false)} > {link} </a>
           </li>
         ))}
 
-        <button
-          className={styles.themeBtn}
-          onClick={() =>
-            setDarkMode(!darkMode)
-          }
-        >
-          {darkMode ? (
-            <Sun size={20} />
-          ) : (
-            <Moon size={20} />
+        <button className={styles.themeBtn} onClick={() =>
+          setDarkMode(!darkMode)
+        } >
+          {darkMode ? (<Sun size={20} />) : (<Moon size={20} />
           )}
         </button>
       </ul>
 
-      <button
-        className={styles.mobileBtn}
-        onClick={() => setOpen(!open)}
-      >
-        {open ? (
-          <X size={28} />
-        ) : (
-          <Menu size={28} />
+      <button className={styles.mobileBtn} onClick={() => setOpen(!open)}>
+        {open ? (<X size={28} />) : (<Menu size={28} />
         )}
       </button>
     </nav>
   );
 };
-
 export default Navbar;
