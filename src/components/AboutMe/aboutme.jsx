@@ -58,11 +58,9 @@ const AboutMe = () => {
           <h3>Who I Am</h3>
 
           <p>
-            I'm a BCA student and web developer who enjoys creating
-            modern, responsive, and interactive web applications.
-            I love combining clean design with practical
-            functionality to build experiences that feel intuitive,
-            engaging, and meaningful.
+            I recently completed my Bachelor's of Computer Applications (B.C.A.) and enjoy building 
+            practical web applications. I believe in learning through projects and continuously 
+            improving my development skills as I begin my professionalcareer.
           </p>
         </motion.div>
 
@@ -75,12 +73,12 @@ const AboutMe = () => {
           whileHover={{ y: -8 }}
           className={styles.card}
         >
-          <h3>Developer First</h3>
+          <h3>Industry Exposure</h3>
 
           <p>
-            I enjoy transforming ideas into real products and
-            solving problems through thoughtful development and
-            hands-on project building.
+            Completed my internship at BHARAT ELECTRONICS LIMITED (BEL), where I gained 
+            exposure to professional work culture, project execution and made an employee 
+            entry web system to simulate the same.
           </p>
         </motion.div>
 
@@ -93,8 +91,9 @@ const AboutMe = () => {
           whileHover={{ y: -8 }}
           className={styles.card}
         >
-          <h3>Design Focused</h3>
+          <h3>Project Experience</h3>
           <p>
+            Built multiple projects to strengthen my understanding of full stack development.
             I pay attention to user experience, visual hierarchy,
             responsiveness, and smooth interactions that make
             applications enjoyable to use.
@@ -110,12 +109,12 @@ const AboutMe = () => {
           whileHover={{ y: -8 }}
           className={styles.card}
         >
-          <h3>Growth Mindset</h3>
+          <h3>Open to Opportunities</h3>
 
           <p>
-            I enjoy learning new technologies, collaborating with
-            others, and continuously improving both technical and
-            professional skills.
+            Having completed my BCA, I am actively looking for opportunities 
+            to start my career in software development. I am excited to contribute,
+            learn from experienced teams, and build impactful applications. 
           </p>
         </motion.div>
 
