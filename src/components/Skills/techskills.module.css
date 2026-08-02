@@ -1,11 +1,12 @@
 .sectionII {
   background: var(--bg);
-  min-height: 67vh;
+  min-height: 75vh;
   padding: 6rem 2rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* margin-bottom: 4rem; */
 }
 
 .wrapper {
@@ -27,7 +28,7 @@
 .sideTag h1 {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  font-size: 6rem;
+  font-size: 8rem;
   font-weight: 900;
   letter-spacing: 12px;
   font-family: "Times New Roman", Times, serif;
@@ -44,7 +45,7 @@
 .container {
   position: relative;
   width: 760px;
-  height: 520px;
+  height: 600px;
   flex: 1;
 }
 
@@ -88,7 +89,7 @@
 
   .container {
     width: 620px;
-    height: 500px;
+    height: 700px;
   }
 
   .sideTag h1 {
