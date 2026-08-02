@@ -94,9 +94,9 @@ const AboutMe = () => {
           <h3>Project Experience</h3>
           <p>
             Built multiple projects to strengthen my understanding of full stack development.
-            I pay attention to user experience, visual hierarchy,
-            responsiveness, and smooth interactions that make
-            applications enjoyable to use.
+            Every project I've built has been an opportunity to learn something new. Whether 
+            exploing a framework, implementing a feature, or fixing bugs, each  project has contributed
+            to my growth as a developer.
           </p>
         </motion.div>
 
