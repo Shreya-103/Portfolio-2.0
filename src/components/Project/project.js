@@ -11,7 +11,7 @@ const project = [
     id: 2,
     title: "GenAI integrated Q/A chatbot",
     image: "./genai-qa.png",
-    description:"Gemini LLM API integrated web app ",
+    description:"A card-based AI question and answer application built with React and Node.js. Users can ask questions, receive AI-generated answers through the Gemini API, and store their question history locally in the browser ",
     demo: "https://shreya-103.github.io/GenAI-chat/",
     github: "https://genai-ask.netlify.app",
   },
