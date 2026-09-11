@@ -1,42 +1,22 @@
 const project = [
   {
     id: 1,
-    title: "Packers & Movers",
-    image: "./Screenshot (30).png",
-    description:
-      "Modern and responsive Packers & Movers landing page built using Bootstrap. Features a clean dark-themed UI, mobile-friendly layout, smooth section spacing, and optimized design for all screen sizes.",
-    demo: "https://shreya-103.github.io/Web-Using-Bootstrap",
-    github: "https://github.com/Shreya-103/Web-Using-Bootstrap",
-  },
-  {
-    id: 2,
-    title: "CURRENCY CONVERTER",
-    image: "./Screenshot (93).png",
-    description:
-      "A responsive Currency Converter web app built using HTML, CSS, and JavaScript that converts currencies using real-time exchange rates. Features include dynamic country flags, currency swapping, live conversion updates, API integration, and a clean mobile-friendly user interface.",
-    demo: "https://shreya-103.github.io/currency-converter",
-    github: "https://github.com/Shreya-103/currency-converter",
-  },
-  {
-    id: 3,
     title: "Notes App",
     image: "./notes-app.png",
-    description:
-      "A responsive Notes App built using React that allows users to create, search, and manage notes efficiently with a clean and interactive UI. Integrated localStorage for persistent data saving, dark mode support, real-time updates, and responsive design for seamless usage across devices.",
+    description: "A responsive Notes App built using React that allows users to create, search, and manage notes efficiently with a clean and interactive UI. Integrated localStorage for persistent data saving, dark mode support, real-time updates, and responsive design for seamless usage across devices.",
     demo: "https://shreya-103.github.io/Notes-App",
     github: "https://github.com/Shreya-103/Notes-App",
   },
   {
-    id: 4,
-    title: "Friendship Analyzer fun game",
-    image: "./Friendship-Analyzer.png",
-    description:
-      "Friendship compatibility score generation, Friendship levels based on score, Loading animations, Dark mode support, Responsive design for mobile and desktop",
-    demo: "https://shreya-103.github.io/Calculate-Bond/",
-    github: "https://github.com/Shreya-103/Calculate-Bond",
+    id: 2,
+    title: "GenAI integrated Q/A chatbot",
+    image: "./genai-qa.png",
+    description:"Gemini LLM API integrated web app ",
+    demo: "https://shreya-103.github.io/GenAI-chat/",
+    github: "https://genai-ask.netlify.app",
   },
   {
-    id: 5,
+    id: 3,
     title: "Employee Entry System",
     image: "./bel-project.png",
     description:
